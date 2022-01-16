@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap');
+
+:root{
+    --clr-background: #F3F4F9;
+    --clr-display: #292224;
+    --clr-green: #38d6c9;
+    --corner-radius: 10px;
+    --clr-number: #7790c2;
+    --clr-shadow-1: #edeef3;
+    --clr-shadow-2: #fafbff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background: var(--clr-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Oswald', sans-serif;
+}
+
+.calculator{
+    height: 480px;
+    width: 240px;
+    border-radius: var(--corner-radius);
+    background: var(--clr-display);
+    box-shadow: 20px 20px 30px var(--clr-shadow-1),
+                -20px -20px 30px var(--clr-shadow-2);   
+}
+
+.display{
+    background: var(--clr-display);
+    height: 150px;
+    padding: 20px;
+    border-radius: var(--corner-radius);
+}
+
+.btn-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 13px;
+    padding-inline: 20px;
+    padding-block: 30px;
+    border-radius: var(--corner-radius);
+    background: var(--clr-background);
+}
+
+.btn{
+    height: 40px;
+    aspect-ratio: 1;
+    border-radius: var(--corner-radius);
+    background: var(--clr-background);
+    box-shadow: 5px 5px 10px #edeef3,
+                -5px -5px 10px #fafbff;
+    line-height: 40px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--clr-display);
+}
+
+.btn:hover{
+    box-shadow: inset 5px 5px 10px #edeef3,
+                inset -5px -5px 10px #fafbff;
+    cursor: pointer;
+}
+
+.number:hover{
+    color: #456bb6;
+}
+
+.number{
+    color: var(--clr-number);
+}
+
+
+#btn-equal{
+    background: var(--clr-green);
+    color: white;
+}
+#btn-equal:hover{
+    box-shadow: inset 5px 5px 10px #30b6ab,
+                inset -5px -5px 10px #40f6e7;
+}
