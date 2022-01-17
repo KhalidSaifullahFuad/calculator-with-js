@@ -36,17 +36,38 @@ body{
 
 .display{
     background: var(--clr-display);
-    height: 150px;
-    padding: 20px;
+    height: 170px;
+    padding: 0 20px;
     border-radius: var(--corner-radius);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.expression{
+    max-height: 115px;
+    margin-top: 20px;
+    padding-bottom: 5px;
+    text-align: end;
+    overflow: auto;
+    color: var(--clr-number);
+    font-size: 18px;
+    letter-spacing: 1px;
+}
+
+.result{
+    color: white;
+    text-align: right;
+    font-size: 32px;
+    font-weight: 500;
+    min-height: 55px;
 }
 
 .btn-grid{
     display: flex;
     flex-wrap: wrap;
     gap: 13px;
-    padding-inline: 20px;
-    padding-block: 30px;
+    padding:30px 20px;
     border-radius: var(--corner-radius);
     background: var(--clr-background);
 }
@@ -79,12 +100,15 @@ body{
     color: var(--clr-number);
 }
 
+.btn-clear{
+    color: rgb(255, 91, 91);
+}
 
-#btn-equal{
+.btn-equal{
     background: var(--clr-green);
     color: white;
 }
-#btn-equal:hover{
+.btn-equal:hover{
     box-shadow: inset 5px 5px 10px #30b6ab,
                 inset -5px -5px 10px #40f6e7;
 }
