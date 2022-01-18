@@ -23,16 +23,23 @@ body{
     align-items: center;
     justify-content: center;
     font-family: 'Oswald', sans-serif;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 .calculator{
-    height: 480px;
-    width: 240px;
+    height: 492.5px;
+    width: 250px;
     border-radius: var(--corner-radius);
     background: var(--clr-display);
-    box-shadow: 20px 20px 30px var(--clr-shadow-1),
-                -20px -20px 30px var(--clr-shadow-2);   
+    /* box-shadow: 20px 20px 30px var(--clr-shadow-1),
+                -20px -20px 30px var(--clr-shadow-2);    */
+    box-shadow: 6px 6px 12px var(--clr-shadow-1),
+                -6px -6px 12px var(--clr-shadow-2);
 }
+
+
 
 .display{
     background: var(--clr-display);
@@ -42,13 +49,13 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
+    align-items: flex-end;
 }
 
 .expression{
     max-height: 115px;
     margin-top: 20px;
     padding-bottom: 5px;
-    text-align: end;
     overflow: auto;
     color: var(--clr-number);
     font-size: 18px;
@@ -70,6 +77,8 @@ body{
     padding:30px 20px;
     border-radius: var(--corner-radius);
     background: var(--clr-background);
+    
+    border: 1px solid var(--clr-background);
 }
 
 .btn{
@@ -79,20 +88,21 @@ body{
     background: var(--clr-background);
     box-shadow: 5px 5px 10px #edeef3,
                 -5px -5px 10px #fafbff;
+    border: 1px solid var(--clr-background);
     line-height: 40px;
     text-align: center;
     font-size: 20px;
     font-weight: 500;
     color: var(--clr-display);
-}
-
-.btn:hover{
-    box-shadow: inset 5px 5px 10px #edeef3,
-                inset -5px -5px 10px #fafbff;
     cursor: pointer;
 }
 
-.number:hover{
+.btn:active{
+    box-shadow: inset 3.5px 3.5px 10px #edeef3,
+                inset -3.5px -3.5px 10px #fafbff;
+}
+
+.number:active{
     color: #456bb6;
 }
 
@@ -100,15 +110,33 @@ body{
     color: var(--clr-number);
 }
 
+.btn:not(.btn-clear,.btn-equal,.number){
+    color: gray;
+}
+
+.btn:not(.btn-clear,.btn-equal,.number):active{
+    color: var(--clr-display);
+}
+
 .btn-clear{
-    color: rgb(255, 91, 91);
+    background: #ff6363;
+    color: white;
+}
+
+.btn-clear:active{
+    box-shadow: inset 3.5px 3.5px 10px #d95454,
+                inset -3.5px -3.5px 10px #ff7272;
 }
 
 .btn-equal{
     background: var(--clr-green);
     color: white;
 }
-.btn-equal:hover{
-    box-shadow: inset 5px 5px 10px #30b6ab,
-                inset -5px -5px 10px #40f6e7;
+
+.btn-equal:active{
+    box-shadow: inset 3.5px 3.5px 10px #30b6ab,
+                inset -3.5px -3.5px 10px #40f6e7;
+}
+.fas{
+    font-size: 16px!important;
 }
