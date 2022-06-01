@@ -4,7 +4,7 @@
     --clr-background: #F3F4F9;
     --clr-display: #292224;
     --clr-green: #38d6c9;
-    --corner-radius: 10px;
+    --corner-radius: 0.7rem;
     --clr-number: #7790c2;
     --clr-shadow-1: #edeef3;
     --clr-shadow-2: #fafbff;
@@ -14,6 +14,7 @@
     margin: 0;
     padding: 0;
 }
+
 
 body{
     width: 100vw;
@@ -41,7 +42,7 @@ body{
 
 
 
-.display{
+.calculator .display{
     background: var(--clr-display);
     height: 170px;
     padding: 0 20px;
@@ -52,7 +53,7 @@ body{
     align-items: flex-end;
 }
 
-.expression{
+.calculator .display .expression{
     max-height: 115px;
     margin-top: 20px;
     padding-bottom: 5px;
@@ -62,7 +63,7 @@ body{
     letter-spacing: 1px;
 }
 
-.result{
+.calculator .display .result{
     color: white;
     text-align: right;
     font-size: 32px;
@@ -70,14 +71,14 @@ body{
     min-height: 55px;
 }
 
-.btn-grid{
+.calculator .btn-grid{
     display: flex;
     flex-wrap: wrap;
     gap: 13px;
     padding:30px 20px;
     border-radius: var(--corner-radius);
     background: var(--clr-background);
-    
+
     border: 1px solid var(--clr-background);
 }
 
@@ -86,8 +87,8 @@ body{
     aspect-ratio: 1;
     border-radius: var(--corner-radius);
     background: var(--clr-background);
-    box-shadow: 5px 5px 10px #edeef3,
-                -5px -5px 10px #fafbff;
+    box-shadow: 0.4rem 0.4rem 0.5rem #edeef3,
+                -0.4rem -0.4rem 0.4rem #fafbff;
     border: 1px solid var(--clr-background);
     line-height: 40px;
     text-align: center;
@@ -95,6 +96,7 @@ body{
     font-weight: 500;
     color: var(--clr-display);
     cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .btn:active{
@@ -102,19 +104,23 @@ body{
                 inset -3.5px -3.5px 10px #fafbff;
 }
 
-.number:active{
+.btn span{
+    font-size: 1rem;
+}
+
+.btn-number:active{
     color: #456bb6;
 }
 
-.number{
+.btn-number{
     color: var(--clr-number);
 }
 
-.btn:not(.btn-clear,.btn-equal,.number){
+.btn:not(.btn-clear,.btn-equal,.btn-number){
     color: gray;
 }
 
-.btn:not(.btn-clear,.btn-equal,.number):active{
+.btn:not(.btn-clear,.btn-equal,.btn-number):active{
     color: var(--clr-display);
 }
 
@@ -137,6 +143,7 @@ body{
     box-shadow: inset 3.5px 3.5px 10px #30b6ab,
                 inset -3.5px -3.5px 10px #40f6e7;
 }
+
 .fas{
     font-size: 16px!important;
 }

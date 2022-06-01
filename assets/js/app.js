@@ -4,10 +4,10 @@ const buttons = document.querySelectorAll('.btn');
 
 buttons.forEach((btn) => btn.addEventListener("click", (e) => {
     const btnClass = e.target.classList;
-    
-    if(btnClass.contains('number')){
-        resultDisplay.innerHTML += this.innerHTML;
-        expressionDisplay.innerHTML += this.innerHTML;
+    console.log(this);
+    if(btnClass.contains('btn-number')){
+        resultDisplay.innerHTML += e.target.innerHTML;
+        expressionDisplay.innerHTML += e.target.innerHTML;
     }else if(btnClass.contains('btn-clear')){
         resultDisplay.innerHTML = 0;
         expressionDisplay.innerHTML = 0;
